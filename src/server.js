@@ -13,13 +13,25 @@ app.set('views', 'src/views');
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
 
+const mainInfo = {
+  title: 'SSR',
+  date: '2022',
+};
+
 app.get('/', function (req, res) {
-  //   const pathToIndex = path.join(__dirname, 'views', 'index.html');
-  //   res.sendFile(pathToIndex);
-  res.render('index');
+  // get info from db
+  const tech = ['Html', 'Css', 'Js'];
+  const data = {
+    tech,
+    title: 'Home page',
+  };
+  res.render('index', data);
 });
 
 app.get('/about', (req, res) => {
+    const data = {
+        title: 'About us'
+    }
   res.render('about');
 });
 

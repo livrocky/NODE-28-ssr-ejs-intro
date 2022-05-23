@@ -17,11 +17,19 @@
         </nav>
     </header>
     <% const username="James Bond" %>
-        <h1>SSR works</h1>
+        <h1>SSR | <%= title %>
+        </h1>
         <p>Kiek yra 5 * 47 = <%= 5 * 47 %>
         </p>
         <p>Siuo metu prisijunges yra: <%= username %>
         </p>
+        <ul>
+           <% tech.forEach(t => { %>
+            <li> <%= t %></li>
+           <% }) %>
+        </ul>
+
+        <footer>Copyright &copy; <%= new Date().getFullYear() %>  </footer>
 
 </body>
 
