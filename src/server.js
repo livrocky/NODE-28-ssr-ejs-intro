@@ -35,4 +35,11 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+app.get('/contact', (req, res) => {
+    const locals = {
+        title: 'Contact Us'
+    }
+    res.render('contact', locals)
+})
+
 app.listen(PORT, () => console.log('listening on port', PORT));
