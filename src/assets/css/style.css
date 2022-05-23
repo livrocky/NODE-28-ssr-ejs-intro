@@ -1,10 +1,11 @@
 h1 {
     font-size: 3rem;
+    font-weight: normal;
 }
 
-body{
+/* body{
     background-color: tomato;
-}
+} */
 
 img{
     max-width: 100vh;
