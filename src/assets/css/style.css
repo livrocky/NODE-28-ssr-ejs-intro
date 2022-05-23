@@ -3,10 +3,17 @@ h1 {
     font-weight: normal;
 }
 
-/* body{
-    background-color: tomato;
-} */
 
 img{
     max-width: 100vh;
+}
+
+.user{
+    padding: 20px;
+    display: inline-grid;
+    border: 1px solid black;
+    margin: 20px;
+    background-color: bisque;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    width: 150px;
 }

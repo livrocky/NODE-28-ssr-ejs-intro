@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+    <%- include('partials/nav') %>
+        <h1>Users</h1>
+        <% users.forEach( userObj=> { %>
+
+            <div class="user">
+                <p>
+                    <%= userObj.name %>
+                </p>
+                <p>
+                    <%= userObj.email %>
+                </p>
+                <p>
+                    <%= userObj.age %>
+                </p>
+                <p>
+                    <%= userObj.gender %>
+                </p>
+            </div>
+            <% }) %>
+
+                <%- include('partials/footer') %>

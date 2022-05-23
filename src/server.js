@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { users } = require('./db');
 
 const PORT = 3007;
 
@@ -29,17 +30,29 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about', (req, res) => {
-    const data = {
-        title: 'About us'
-    }
+  const data = {
+    title: 'About us',
+  };
   res.render('about');
 });
 
 app.get('/contact', (req, res) => {
-    const locals = {
-        title: 'Contact Us'
-    }
-    res.render('contact', locals)
-})
+  const locals = {
+    title: 'Contact Us',
+  };
+  res.render('contact', locals);
+});
+
+app.get('/users', (req, res) => {
+  const locals = {
+    users,
+  };
+  res.render('users', locals);
+});
+
+// GET /users = grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
+// sukurti user.ejs
+// exportuoti importuori users masyva
+// user.ejs psl generuoti korteles is masyvo duomenu
 
 app.listen(PORT, () => console.log('listening on port', PORT));
