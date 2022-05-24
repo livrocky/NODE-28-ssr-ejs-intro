@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { users } = require('./db');
 
 const PORT = 3007;
 
@@ -24,35 +23,33 @@ app.get('/', function (req, res) {
   const tech = ['Html', 'Css', 'Js'];
   const data = {
     tech,
-    title: 'Home page',
+    title: 'Welcome',
+    currentPage: 'home',
   };
   res.render('index', data);
 });
 
 app.get('/about', (req, res) => {
   const data = {
-    title: 'About us',
+    title: 'About Us',
+    currentPage: 'about',
   };
-  res.render('about');
+  res.render('about', data);
 });
 
 app.get('/contact', (req, res) => {
   const locals = {
     title: 'Contact Us',
+    currentPage: 'contact',
   };
+  // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
   res.render('contact', locals);
 });
 
-app.get('/users', (req, res) => {
-  const locals = {
-    users,
-  };
-  res.render('users', locals);
-});
-
-// GET /users = grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
-// sukurti user.ejs
-// exportuoti importuori users masyva
+// GET /users - grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
+// sukuri user.ejs
+// exportuoti importuoti users masyva
+// paduoti users masyva i user.ejs psl
 // user.ejs psl generuoti korteles is masyvo duomenu
 
 app.listen(PORT, () => console.log('listening on port', PORT));

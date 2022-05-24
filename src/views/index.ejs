@@ -1,16 +1,25 @@
-<%- include('partials/head') %> 
-<%- include('partials/nav') %> 
+<%- include('partials/head') %>
+    <%- include('partials/nav') %>
 
-    <% const username="James Bond" %>
-        <h1>SSR | <%= title %>
-        </h1>
-        <p>Kiek yra 5 * 47 = <%= 5 * 47 %>
-        </p>
-        <p>Siuo metu prisijunges yra: <%= username %>
-        </p>
-        <ul>
-           <% tech.forEach(t => { %>
-            <li> <%= t %></li>
-           <% }) %>
-        </ul>
-        <%- include('partials/footer') %> 
+
+        <!-- this is normas html comment -->
+        <%# This is comment and it is safely hidden in back end %>
+            <% const username="James Bond" %>
+                <h1>
+                    <%= title %>
+                </h1>
+
+                <p>Kiek yra 5 * 47 = <%= 5 * 47 %>
+                </p>
+                <p>Siuo metu prisijunges yra: <%= username %>
+                </p>
+                <ul>
+                    <% tech.forEach(t=> { %>
+                        <li>
+                            <%= t %>
+                        </li>
+                        <% }) %>
+                </ul>
+
+
+                <%- include('partials/footer') %>

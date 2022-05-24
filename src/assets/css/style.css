@@ -1,20 +1,37 @@
 h1 {
     font-size: 3rem;
     font-weight: normal;
-}
-
-
-img{
-    max-width: 100vh;
-}
-
-.user{
-    padding: 20px;
-    display: inline-grid;
-    border: 1px solid black;
-    margin: 20px;
-    background-color: bisque;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    width: 150px;
+  }
+  
+  body {
+    /* background-color: tomato; */
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  
+  nav {
+    background-color: #333;
+    color: snow;
+  }
+  .navLink {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    color: white;
+    display: inline-block;
+  }
+  
+  .navLink.active {
+    /* font-weight: bold; */
+    text-decoration: underline;
+    color: rgb(198, 198, 198);
+    background-color: rgb(103, 103, 103);
+  }
+  
+  
+  footer {
     text-align: center;
-}
+  }
