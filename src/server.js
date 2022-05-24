@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bookRoutes = require('./routes/bookRoutes');
 const pageRoutes = require('./routes/pageRoutes');
 
 const PORT = 3007;
@@ -16,6 +17,7 @@ app.use(express.static(staticDir));
 
 // Routes
 app.use('/', pageRoutes);
+app.use('/', bookRoutes);
 
 // GET /users - grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
 // sukuri user.ejs
