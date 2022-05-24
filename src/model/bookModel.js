@@ -24,6 +24,12 @@ function getAllBooks() {
   return executeDb(sql);
 }
 
+function addBook(title, author, year, category) {
+  const sql = 'INSERT INTO books (title, author, year, category) VALUES (?, ?, ?, ?)';
+  return executeDb(sql, [title, author, year, category]);
+}
+
 module.exports = {
   getAllBooks,
+  addBook,
 };

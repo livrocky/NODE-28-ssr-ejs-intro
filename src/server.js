@@ -12,6 +12,10 @@ app.set('view engine', 'ejs');
 // kelias iki views direktorijos nuo root
 app.set('views', 'src/views');
 
+// middleware
+// atkoduoti req.body
+app.use(express.urlencoded({ extended: false }));
+
 // static directory
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
