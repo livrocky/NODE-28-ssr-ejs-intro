@@ -5,7 +5,35 @@
             <%= locals.title && title %>
         </h1>
         <hr>
-        <h2>Our books</h2>
+        <% if (feedback) { %>
+            <div class="feedback error">
+                <%= feedback %>
+            </div>
+            <% } %>
 
 
-        <%- include('partials/footer') %>
+                <h2>Our books</h2>
+                <div class="grid">
+                    <% if (allBooksArr?.length) { %>
+                        <% allBooksArr.forEach(el=> { %>
+                            <div class="card">
+                                <h4>
+                                    <%= el.title %>
+                                </h4>
+                                <p>
+                                    <%= el.author %>
+                                </p>
+                                <p><i>
+                                        <%= el.year %>
+                                    </i></p>
+                            </div>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>There are no books</p>
+                                    <% } %>
+
+                </div>
+
+
+
+                <%- include('partials/footer') %>

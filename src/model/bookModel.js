@@ -23,6 +23,7 @@ function getAllBooks() {
   const sql = 'SELECT * FROM books';
   return executeDb(sql);
 }
+
 module.exports = {
   getAllBooks,
 };

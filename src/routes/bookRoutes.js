@@ -23,4 +23,14 @@ bookRoutes.get('/books', async (req, res) => {
   res.render('books', locals);
 });
 
+// GET /new-book - render new-book.ejs kuriame yra forma sukurti naujai knygai
+
+bookRoutes.get('/books/new', async (req, res) => {
+  const locals = {
+    currentPage: 'new-form',
+    title: 'Lets create a new book',
+  };
+  res.render('new-book', locals);
+});
+
 module.exports = bookRoutes;

@@ -1,0 +1,17 @@
+<%- include('partials/head') %>
+    <%- include('partials/nav') %>
+
+        <h1>
+            <%= title %>
+        </h1>
+        <h2>Form</h2>
+        <form action="/books/new" method="post">
+            <input type="text" name="title" value='' placeholder="Enter title"> <br>
+            <input type="text" name="author" value='' placeholder="Enter author"> <br>
+            <input type="number" name="year" value='' placeholder="Enter year"> <br>
+            <input type="nuber" name="category" value="1">
+            <button id='add-book' type="submit">Create</button>
+        </form>
+
+
+        <%- include('partials/footer') %>
