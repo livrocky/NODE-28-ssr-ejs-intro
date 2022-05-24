@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const pageRoutes = require('./routes/pageRoutes');
 
 const PORT = 3007;
 
@@ -13,38 +14,8 @@ app.set('views', 'src/views');
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
 
-const mainInfo = {
-  title: 'SSR',
-  date: '2022',
-};
-
-app.get('/', function (req, res) {
-  // get info from db
-  const tech = ['Html', 'Css', 'Js'];
-  const data = {
-    tech,
-    title: 'Welcome',
-    currentPage: 'home',
-  };
-  res.render('index', data);
-});
-
-app.get('/about', (req, res) => {
-  const data = {
-    title: 'About Us',
-    currentPage: 'about',
-  };
-  res.render('about', data);
-});
-
-app.get('/contact', (req, res) => {
-  const locals = {
-    title: 'Contact Us',
-    currentPage: 'contact',
-  };
-  // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
-  res.render('contact', locals);
-});
+// Routes
+app.use('/', pageRoutes);
 
 // GET /users - grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
 // sukuri user.ejs
